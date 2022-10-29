@@ -26,13 +26,12 @@
             background-color: rgb(255, 255, 255);
             background-image: url("{{url_for('static',filename='assets/img/classall.png')}}");
             text-align: center;
-            width: 100%;
+            width: 100vw;
             height: 110vh;
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
             background-attachment: fixed;
-
         }
 #img1{
   width: 100%;
@@ -57,6 +56,34 @@
   margin-bottom: 200px;
   
 }
+@media (max-width:600px){
+  #img1 {
+    width: 108%;
+    height: 914px;
+    margin-top: -384px;
+    margin-left: 32px;
+}
+  .card_container{
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: -300px;
+     margin-left: -32px;
+}
+.bg{
+  background-color: rgb(255, 255, 255);
+  background-image: url("{{url_for('static',filename='assets/img/classall.png')}}");
+  text-align: center;
+  width: 110vw;
+  height: 50vh;
+  /* background-repeat: no-repeat; */
+  background-position: center;
+  background-size: cover;
+  /* background-attachment: fixed; */
+        }
+
+
+}
 </style>
 </head>
 <body>
@@ -67,7 +94,8 @@
         0 0 42px rgb(132, 37, 242), 0 0 82px rgb(118, 0, 252),
         0 0 92px rgb(157, 0, 255), 0 0 102px #0fa, 0 0 151px #0fa;">WELCOME TO CSBS 2.0 </h1>
     </div>
-    <img id="img1" src="/static/assets/img/CSBSi.svg" alt="">
+      <img id="img1" src="/static/assets/img/CSBSi.svg" alt="">
+
     
     <div class="card_container" >
       <div class="card" style="width: 20rem; margin-left: 50px;">
