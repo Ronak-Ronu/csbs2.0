@@ -21,20 +21,28 @@
         position: absolute;
         border-radius: 10px;
       }
+      @media (max-width:500px){
+          .contact-box{
+            width: 350px;
+            height: 500px;
+          }
+      }
       form {
         margin: 20px;
       }
       .input-field {
-        width: 400px;
+        width: min(90%,1000px);
         height: 40px;
         margin-top: 5px;
         padding-left: 20px;
         padding-right: 10px;
+        margin-inline: auto;
         border: none;
         border-bottom: 2px solid black;
         border-radius: 10px;
         outline: none;
       }
+
       .textarea-field {
         height: 100px;
       }
