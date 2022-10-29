@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+  box-sizing: border-box;
+}
+body::-webkit-scrollbar{
+                width: 0.4rem;
+
+            }
+            body::-webkit-scrollbar-track{
+                background:white;
+            }
+            body::-webkit-scrollbar-thumb
+            {
+                background: #dd4814;
+            }
+
+html,body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  background: #181818;
+}
+
+.wrapper {
+  display: grid;
+  place-items: end;
+  width: 141px;
+    height: 144px;
+    margin-left: -23px;
+    margin-top: -226px;
+  transform: rotate(45deg);
+  background-color: rgb(109, 109, 109);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+@keyframes tick-animation {
+  0%,
+  20% { transform: scaleX(0); }
+  30% { transform: scaleX(1); }
+  95% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.tick {
+  position: relative;
+  height: 12px;
+    width: 32px;
+    margin-right: 42px;
+    margin-bottom: 29px;
+  transform-origin: 0% 0%;
+  border-radius: 5px 5px 0 5px;
+  background: #24d600;
+  animation: tick-animation 4s infinite;
+}
+
+@keyframes tick-before-animation {
+  0%,
+  30% { transform: scaleY(0); }
+  45% { transform: scaleY(1); }
+}
+
+.tick::before {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+    right: 0;
+    width: 10px;
+    height: 63px;
+  transform-origin: 0% 100%;
+  border-radius: inherit;
+  background: inherit;
+  animation: tick-before-animation 4s infinite;
+}
+.bn47 {
+  position: relative;
+  padding: 2rem 4rem 0.5rem 1.5rem;
+  font-size:30px;
+  text-decoration: none;
+  margin-left: -20px;
+  margin-bottom: 50px;
+  color: #000000;
+  border: 3px solid #776e62;
+  -webkit-transition: padding 0.3s ease-in-out;
+  transition: padding 0.3s ease-in-out;
+}
+
+.bn47:before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  border-right: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.bn47:hover {
+  padding: 0.75rem 2.25rem;
+}
+
+.bn47:hover:before {
+  top: 0;
+  left: 0;
+}
+h1 {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 64px;
+  padding: 80px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+  .elegantshadow {
+    color: #e0dfdc;
+    background-color: #18181800;
+    letter-spacing: .15em;
+    
+  }
+  p{
+    font-size: 17px;
+    color: white;
+  }
+    </style>
+</head>
+<body>
+    <h1 class="elegantshadow">REQUEST ACCEPTED</h1>
+    <div class="wrapper">
+        <div class="tick"></div>
+      </div>
+      <a class="bn47" href="/">HOME</a>
+      <p>YOU WILL BE ADDED</p>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Lobster&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        background-color: rgb(255, 255, 255);
+        background-image: url("{{url_for('static',filename='assets/img/classall.png')}}");
+        background-repeat: no-repeat;
+        /* background-size: cover; */
+        max-width: 100%;
+        max-height: 100%;
+      }
+      /* .head {
+        /* width: 100vw; */
+        /* height: 100vh; */
+        /* background: linear-gradient(45deg, #89abe3ff, #fcf6f5ff); */
+        /* clip-path: polygon(0% 0%, 100% 0%, 100% 89%, 0% 100%); */
+        /* background-size: cover; */
+      /* } */
+      nav {
+        width: 100%;
+        height: 100px;
+        display: flex;
+      }
+      .logo {
+        width: 90vw;
+        height: 100px;
+      }
+      .logo h1 {
+        font-family: "Inconsolata", monospace;
+        font-family: "Lobster", cursive;
+        line-height: 64px;
+        padding-left: 51px;
+        color: #fff;
+        text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+          0 0 42px rgb(132, 37, 242), 0 0 82px rgb(118, 0, 252),
+          0 0 92px rgb(157, 0, 255), 0 0 102px #0fa, 0 0 151px #0fa;
+        font-size: 60px;
+        margin-top: 30px;
+      }
+      .items {
+        width: 64%;
+        height: 242px;
+        display: flex;
+        padding: 10px 1px;
+      }
+      /* @media (min-aspect-ratio:16/9){
+       .head{
+        width: 100%;
+        height: auto;
+       }
+
+      } */
+      .items ul {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin-top: 23px;
+        font-weight: bold;
+        
+      }
+      .button-51 {
+        background-color: transparent;
+        border: 3px solid #266db6;
+        box-sizing: border-box;
+        color: #ffffff;
+        font-family: "Avenir Next LT W01 Bold", sans-serif;
+        font-size: 16px;
+        font-weight: 1000;
+        line-height: 3rem;
+        padding: 50px 23px;
+        position: relative;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        margin-right: 50px;
+        border-radius: 10px;
+        margin-left: 40px;
+      }
+
+      .button-51:hover,
+      .button-51:active {
+        outline: 0;
+      }
+
+      .button-51:hover {
+        background-color: transparent;
+        cursor: pointer;
+        color: white;
+      }
+
+      .button-51:before {
+        background-color: transparent;
+
+        content: "";
+        height: calc(100% + 3px);
+        position: absolute;
+        right: -8px;
+        top: -9px;
+        transition: background-color 280ms ease-in;
+        width: 100%;
+        z-index: -1;
+        border-radius: 10px;
+      }
+      a {
+        text-decoration: none;
+        display: inline-block;
+      }
+      .button-51:hover:before {
+        background-color: #6dcff6;
+      }
+
+      @media (min-width: 100px) {
+        .button-51 {
+          padding: 4px 20px;
+        }
+      }
+      .welcome {
+        display: flex;
+        margin-left: 50%;
+        margin-top: 180px;
+        color: #fff;
+        text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+          0 0 42px rgb(132, 37, 242), 0 0 82px rgb(118, 0, 252),
+          0 0 92px rgb(157, 0, 255), 0 0 102px #0fa, 0 0 151px #0fa;
+        font-size: 40px;
+      }
+      .welcome p {
+        margin-top: 223px;
+        margin-left: -312px;
+      }
+    
+    </style>
+  </head>
+  <body>
+    <header class="head">
+      <nav>
+        <div class="logo">
+          <h1><a href="\">CSBS 2.O</a></h1>
+        </div>
+        <div class="items">
+          <ul>
+          <form action="/gotoclass" class="ex_form">
+              <button class="button-51" id="b1" role="button">
+                CLASS
+              </button>
+            </form>
+            <form action="/addme">
+              <button class="button-51" id="b2" role="button">AddMe</button>
+            </form>
+            <form action="/rate">
+              <button class="button-51" role="button">RATE</button>
+            </form>
+            <form action="/blog">
+              <button class="button-51" role="button">BLOG</button>
+            </form>
+          </ul>
+        </div>
+      </nav>
+      <div class="welcome">
+        <h1>
+          HELLO <span><h2>BUDDEES</h2></span>
+        </h1>
+        <br />
+        <p>THIS IS FOR YOU</p>
+      </div>
+
+    </header>
+
+  </body>
+</html>

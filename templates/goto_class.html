@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CLASS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        /* a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            text-transform: capitalize;
+            display: flex;
+            justify-content: center;
+            margin-top:90vh;
+        } */
+        .bg{
+            background-color: rgb(255, 255, 255);
+            background-image: url("{{url_for('static',filename='assets/img/classall.png')}}");
+            text-align: center;
+            width: 100%;
+            height: 110vh;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+#img1{
+  width: 100%;
+  height: 1099px;
+    margin-top: -410px;
+    margin-left: -10px;
+
+}
+.card_container{
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  margin-top: -300px;
+  margin-left: 100px;
+}
+.knowmore{
+  position: absolute;
+  height: 100px;
+  width: 89px;
+  background-color: black;
+  margin-left: 100px;
+  margin-bottom: 200px;
+  
+}
+</style>
+</head>
+<body>
+
+  <div class="bg">
+      <h1 style="color: white; font-weight: 1000;color: #fff;
+      text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+        0 0 42px rgb(132, 37, 242), 0 0 82px rgb(118, 0, 252),
+        0 0 92px rgb(157, 0, 255), 0 0 102px #0fa, 0 0 151px #0fa;">WELCOME TO CSBS 2.0 </h1>
+    </div>
+    <img id="img1" src="/static/assets/img/CSBSi.svg" alt="">
+    
+    <div class="card_container" >
+      <div class="card" style="width: 20rem; margin-left: 50px;">
+        <img class="card-img-top" src="{{url_for('static',filename='assets/img/ronak.jpg')}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">RONAK_SUTHAR</h5>
+          <p class="card-text">Hello,im ronak. &#x1F9D1;&#x200D;&#x1F4BB; Creator of this wide project.being chill-playfull-learner.</p>
+            
+            <a  href="https://www.instagram.com/ronak._.2002/" class="btn btn-primary">KNOW MORE </a>
+            <a href="https://www.instagram.com/ronak._.2002/">
+              <img src=" {{ url_for('static', filename='assets/img/insta.png') }} " alt=""> 
+            </a>
+        </div>
+      </div>
+    
+      <div class="card" style="width: 20rem; margin-left: 50px;">
+        <img class="card-img-top" src="{{url_for('static',filename='assets/img/sasi.jpg')}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">SASIKUMAR</h5>
+          <p class="card-text">Thalapathy fan &#x1F525; Smartest huy in class  &#x1F468;&#x200D;&#x1F393; friendly behaviour &#x1F64E;&#x200D;&#x2642;&#xFE0F; <br>Share about you to email by clicking on below section of hey,add me too.your thought will added in this section.</p>
+          <a  href="https://www.instagram.com/__innocent_kd_/" class="btn btn-primary">KNOW MORE</a>
+          <a href="https://www.instagram.com/__innocent_kd_/">
+            <img src=" {{ url_for('static', filename='assets/img/insta.png') }} " alt=""> 
+          </a>
+        </div>
+      </div>
+      <div class="card" style="width: 20rem; margin-left: 50px;">
+        <img class="card-img-top" src="{{url_for('static',filename='assets/img/harish.jpeg')}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">HARISH_RAGAVENDAR</h5>
+          <p class="card-text">Programmer-logic man - think before speak - skilled - chilled <br>Share about you to email by clicking on below section of hey,add me too.your thought will added in this section. </p>
+          <a  href="https://www.instagram.com/harish_ragavendar_11/" class="btn btn-primary">KNOW MORE</a>
+          <a href="https://www.instagram.com/harish_ragavendar_11/">
+            <img src=" {{ url_for('static', filename='assets/img/insta.png') }} " alt=""> 
+          </a>
+        </div>
+        
+      </div>
+      <div class="card" style="width: 20rem; margin-left: 50px;">
+        <img class="card-img-top" src="{{url_for('static',filename='assets/img/donald.jpg')}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">DONAL_JOSEPH</h5>
+          <p class="card-text">Share about you to email by clicking on below section of hey,add me too.your thought will added in this section. </p>
+          <a  href="https://www.instagram.com/donal.joseph.7/" class="btn btn-primary">KNOW MORE</a>
+          <a href="https://www.instagram.com/donal.joseph.7/">
+            <img src=" {{ url_for('static', filename='assets/img/insta.png') }} " alt=""> 
+          </a>
+        </div>
+      </div>
+      <div class="card" style="width: 20rem; margin-left: 50px;">
+        <img class="card-img-top" src="{{url_for('static',filename='assets/img/manoj.jpg')}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">MANOJ</h5>
+          <p class="card-text">Share about you to email by clicking on below section of hey,add me too.your thought will added in this section.</p>
+          <a  href="https://www.instagram.com/manoj9138manoj/" class="btn btn-primary">KNOW MORE</a>
+          <a href="https://www.instagram.com/manoj9138manoj/">
+            <img src=" {{ url_for('static', filename='assets/img/insta.png') }} " alt=""> 
+          </a>
+        </div>
+      </div>
+      <div class="card" style="width: 20rem; margin-left: 50px;">
+        <img class="card-img-top" src="{{url_for('static',filename='assets/img/saran.jpg')}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">SARAN</h5>
+          <p class="card-text">Lunatic</p> Share about you to email by clicking on below section of hey,add me too.your thought will added in this section.
+          <a  href="https://www.instagram.com/the_lunatic_fringe07/" class="btn btn-primary">KNOW MORE</a>
+          <a href="https://www.instagram.com/the_lunatic_fringe07/">
+            <img src=" {{ url_for('static', filename='assets/img/insta.png') }} " alt=""> 
+          </a>
+        </div>
+      </div>
+      <div class="card" style="width: 20rem; margin-left: 50px;">
+        <img class="card-img-top" src="{{url_for('static',filename='assets/img/mouli.jpg')}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">MOULITHARAN</h5>
+          <p class="card-text">Share about you to email by clicking on below section of hey,add me too.your thought will added in this section.</p>
+          <a  href="https://www.instagram.com/mt_mouli_003/" class="btn btn-primary">KNOW MORE</a>
+          <a href="https://www.instagram.com/mt_mouli_003/">
+            <img src=" {{ url_for('static', filename='assets/img/insta.png') }} " alt=""> 
+          </a>
+        </div>
+      </div>
+      <div class="card" style="width: 20rem; margin-left: 50px;">
+        <img class="card-img-top" src="{{url_for('static',filename='assets/img/gowtham.jpg')}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">GOWTHAM_RAMASAMY</h5>
+          <p class="card-text">meditation boy &#x1F9D8;&#x200D;&#x2642;&#xFE0F;<br>Gym boy &#x1F3CB;&#xFE0F;&#x200D;&#x2642;&#xFE0F; Cool boy <br> Talkactive 
+            Share about you to email by clicking on below section of hey,add me too.your thought will added in this section.</p>
+          <a  href="https://www.instagram.com/gowtham__ramasamy_/" class="btn btn-primary">KNOW MORE</a>
+          <a href="https://www.instagram.com/gowtham__ramasamy_/">
+            <img src=" {{ url_for('static', filename='assets/img/insta.png') }} " alt=""> 
+          </a>
+        </div>
+      </div>
+      
+    </div>
+<br>
+<br>
+<br>
+      <h2 style="text-decoration: none;font-weight: 900;text-align: center;text-shadow: 1px 1px black;">Hey,Add me too .<a style="text-decoration: none;" href="/email-contact"><h2>Click ME</h2></a></h2>
+    
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+</body>
+
+</html>

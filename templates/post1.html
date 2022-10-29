@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Clean Blog - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='assets/favicon.ico')}}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{url_for('static',filename='css/styles.css')}}" rel="stylesheet" />
+        <style>
+            img{
+                width: 362px;
+                height: 226px;
+            }
+            .second{
+	width: 350px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px #aaaaaa;
+}
+            body::-webkit-scrollbar{
+                width: 0.7rem;
+
+            }
+            body::-webkit-scrollbar-track{
+                background:white;
+            }
+            body::-webkit-scrollbar-thumb
+            {
+                background: #0085A1;   
+                 }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation-->
+        <!-- <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav> -->
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/post-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>FUN WAY TO UNDERSTAND PROGRAMMING</h1>
+                            <h2 class="subheading">lets get started with programming</h2>
+                            <span class="meta">
+                                Posted on : October 12, 2022
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <img  src="{{url_for('static',filename='assets/img/program.jpeg')}}" alt="..." />
+                        <p>We're a community of people who enjoy and understand programming jokes. Share your coding memes with us over a coffee break.</p>
+                        <p>I enjoy reading programming jokes . and sometimes if don’t understand jokes which acutally means that i am not aware of that jokes topic or theme , and i learn about the topic that joke explain after a while i return to that same joke which i cant understand and now i am , See how usefull are programming jokes</p>
+                        <h2 class="section-heading">Where i can get those jokes</h2>
+                        <p>you can get programming jokes from anywhere around internet but surfing to good path is best . so in this blog you will get the premium jokes for free and easy</p>
+                        <p>How can you get those premium joke none other than telegram .</p>
+                        <p>I am so nice that i will share every telegram channel i prefer to view</p>
+                        <h2 class="section-heading">Channel no.1 Programmers Jokes</h2>
+                        <img  src="{{url_for('static',filename='assets/img/semicolon.jpeg')}}" alt="..." />
+                        <p>This telegram channel is my favourite . I enjoyed this channel very much and so i will highly recommend you to view this channel yeah one thing i want to tell this blog is not sponsered .</p>
+                        <p>Enjoy laughing</p>
+                        <p>CLICK ON BELOW BUTTON TO JOIN ABOVE CHANNEL</p>
+                        <a href="https://t.me/programmerjokes">
+                            <button>JOIN CHANNEL</button>
+                        </a> 
+                        <h2 class="section-heading">Channel no.2 Programming Jokes</h2>
+                        <p> This telegram channel is quit similar to previous channel i have wrote .but the twist is that this channel give different and unique content to their user . i love this channel i so i recommend this channel to you.</p>
+                        <p>So time is precious and not to waste time lets jump to the channel</p>
+                        <p>CLICK BELOW BUTTIN TO JOIN ABOVE CHANNEL</p>
+                        <a href="https://t.me/ProgrammingJokes">
+                            <button>JOIN CHANNEL</button>
+                        </a> 
+                        <p>that`s it for today enjoy the channels and meet you later </p>
+                        <blockquote class="blockquote">"Most jokes state a bitter truth. Larry Gelbart"</blockquote>
+                        <blockquote>"I have a file of four million jokes... I have them cross-indexed. Whatever subject you want, I have a joke on it."</blockquote>
+                        <h2 class="section-heading">Chennel no.3 Coding memes</h2>
+                        <img  src="{{url_for('static',filename='assets/img/codingmemes.jpeg')}}" alt="" />
+                        <p>Coding memes as the name sugges its a meme channel for only coders .</p>
+                        <p>this channel will make you laugh out loudly</p>
+                        <p>dont forgot to checkout this channel  </p>
+                        <p>CLICK BELOW BUTTON TO JOIN ABOVE CHANNEL</p>
+                        <a href="https://t.me/codingjokes">
+                            <button>JOIN CHANNEL</button>
+                        </a> 
+                        <h2 class="section-heading">Channel no.4 Programming Books Chat</h2>
+                        <img  src="{{url_for('static',filename='assets/img/hacker.jpeg')}}" alt="..." />
+                        <p>As the name suggest this channel is about programming books and this telegram channel is the most favourite to me whu ,causse this channel help me to find any book base on field of programmgin.</p>
+                        <p>If you want any book and you cant find any programming book dont worry this channel will help you out</p>
+                        <p>what you want to do to get your book is to chat the book name in channel and people will definietly help you out ot find the book and send through the channel to you . and so this channel names as programming book chat</p>
+                        <p>you can also ask book for your topic and also ask doubt without hesitation</p>
+                        <p>CLICK BELOW BUTTON TO JOIN ABOVE CHANNEL</p>
+                        <a href="https://t.me/programmingbookchat">
+                            <button>JOIN CHANNEL</button>
+                        </a> 
+                    </div>
+                </div>
+            </div>
+        </article>
+        <form style="background-color: #eee;"  method="POST" action="/create-comment">
+            <h3 style="margin-left:275px;" >Comment Section</h3>
+            <div class="container my-5 py-5">
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-12 col-lg-10 col-xl-8">                 
+                  
+                    <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+                      <div class="d-flex flex-start w-100">
+                        <div class="form-outline w-100">
+        
+                            <input type="text"  class="form-control" name="Txt" id="Txt" rows="4 " placeholder="ADD YOUR COMMENT"
+                            style="background: #fff;" required />
+                     
+                          <label class="form-label" for="textAreaExample">Comment</label>
+                        </div>
+                      </div>
+                      <div class="float-end mt-2 pt-1">
+                        <button type="submit" id="submit" value="post_comment" class="btn btn-primary btn-sm">Post comment</button>
+                      </div>
+                      {% for i in data %}
+             
+                      <div class="d-flex justify-content-center py-3">
+                        <div class="second py-2 px-2"> <span class="text1">{{i.text}}</span>
+                            <div class="d-flex justify-content-between py-1 pt-2">
+                                <div><img src="{{url_for('static',filename='assets/img/unknownuser.svg')}}" width="27"><span class="text2">{{i.date_commented}}</span></div>
+                                <!-- <div><span class="text3">Upvote?</span><span class="thumbup"><i class="fa fa-thumbs-o-up"></i></span><span class="text4">3</span></div> -->
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                    </div>
+                 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2022</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{url_for('static',filename='js/scripts.js')}}"></script>
+    </body>
+</html>

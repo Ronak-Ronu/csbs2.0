@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>blog</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{url_for('static',filename='assets/favicon.ico')}}"
+    />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link
+      href="{{url_for('static',filename='css/styles.css')}}"
+      rel="stylesheet"
+    />
+    <style>
+      .btn1 {
+        font-size: 30px;
+      }
+      .btn1:hover {
+        background-color: rgb(181, 185, 194);
+      }
+      ul.b {
+        list-style-type: square;
+      }
+      .b1{
+        font-size: 25px;
+      }
+      .second{
+	width: 500px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px #aaaaaa;
+}
+body::-webkit-scrollbar{
+                width: 0.7rem;
+
+            }
+            body::-webkit-scrollbar-track{
+                background:white;
+            }
+            body::-webkit-scrollbar-thumb
+            {
+                background: #0085A1;
+            }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation-->
+    <!-- <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav> -->
+    <!-- Page Header-->
+    <header
+      class="masthead"
+      style="background-image: url('assets/img/post-bg.jpg')"
+    >
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="post-heading">
+              <h1>BEST BOOKS TO LEARN C PROGRAMMING</h1>
+              <h2 class="subheading"></h2>
+              <span class="meta"> Posted on : August 24, 2022 </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Post Content-->
+    <article class="mb-4">
+      <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <h2>BOOK ON FIRST</h2>
+            <h3>
+              C Programming Absolute Beginner's Guide Book by Dean Miller and
+              Greg Perry
+            </h3>
+            <img
+              src="{{url_for('static',filename='assets/img/book1.jpg')}}"
+              alt=""
+            />
+            <br />
+            <br />
+       
+            <!-- ?content -->
+            <p class="b1">
+                Write powerful C programs…without becoming a technical expert!
+                This book is the fastest way to get comfortable with C, one
+                incredibly clear and easy step at a time.<br> You’ll learn all the
+                basics: how to organize programs, store and display data, work
+                with variables, operators, I/O, pointers, arrays, functions, and
+                much more. C programming has neverbeen this simple! <br><br>
+                Who knew how  simple C programming could be? This is today’s best beginner’s
+                guide to writing C programs–and to learning skills you can use
+                with practically any language. Its simple, practical instructions
+                will help you start creating useful, reliable C code, from games
+                to mobile apps. Plus, it’s fully updated for the new C11 standard
+                and today’s free, open source tools! Here’s a small sample of what
+                you’ll learn: <br> 
+                <ul class="b">
+                    <li> Discover free C programming tools for Windows, OS
+                        X, or Linux</li>
+                    <li> Understand the parts of a C program and how they fit
+                        together</li>
+                    <li> Generate output and display it on the screen</li>
+                    <li> Interact with users and respond to their input</li>
+                    <li> Make the most of variables by using assignments and expressions</li>
+                    <li> Control programs by testing
+                        data and using logical operators</li>
+                    <li> Save time and effort by using
+                        loops and other techniques</li>
+                    <li> Build powerful data-entry routines
+                        with simple built-in functions</li>
+                    <li> Manipulate text with strings</li>
+                    <li> Store information, so it’s easy to access and use</li>
+                        <li> Manage your
+                            data with arrays, pointers, and data structures</li>
+                        <li> Use functions to
+                            make programs easier to write and maintain</li>
+                        <li> Let C handle all your
+                            program’s math for you</li>
+                        <li> Handle your computer’s memory as
+                            efficiently as possible</li>
+                            <li> Make programs more powerful with
+                                preprocessing directives</li>
+                </ul>
+            </p>
+            <a href="/downloads/book1">
+                <button class="btn1">DOWNLOAD BOOK</button>
+              </a>
+              <h3>DATA STRUCTURES USING C 2E Paperback – 11 June 2014
+                by Reema Thareja  (Author)
+            </h3>
+            <img
+            src="{{url_for('static',filename='assets/img/book2.jpg')}}"
+            alt=""
+          />
+          <br />
+          <br />
+            <p>This second edition of Data Structures Using 
+              C has been developed to provide a comprehensive
+               and consistent coverage of both the abstract concepts of
+                data structures as well as the implementation of these 
+                concepts using C language. It begins with a thorough overview 
+                of the concepts of C programming followed by introduction of
+                 different data structures and methods to analyse the complexity
+                  of different algorithms. It then connects these concepts and 
+                  applies them to the study of various data structures such as arrays, 
+                  strings, linked lists, stacks, queues, trees, heaps, and graphs. 
+                  The book utilizes a systematic approach wherein the design of each
+                   of the data structures is followed by algorithms of different operations 
+                   that can be performed on them, and the analysis of these algorithms in 
+                   terms of their running times. Each chapter includes a variety of end-chapter
+                    exercises in the form of MCQs with answers, review questions, and programming 
+                    exercises to help readers test their knowledge.
+            </p>
+            <h4>REVIEWS</h4>
+            <ul>
+              <li>
+                <p>This is the PERFECT book to START with DATASTRUCTURE 
+                  ,all the examples are explain a very very easy manner 
+                  and DIAGRAM are also used in all the examples for a BETTER
+                   understanding of TOPIC ,,,,LANGUAGE used in this book is very 
+                   fluidic ,even a HINDI medium student can understand what the
+                    book wanna say XD,,this book is also perfect book for those wo 
+                    want to understand there own without any coaching and tutition ,
+                    ,JUST like ME ,,,,,there are also chapter like array ,structure etc 
+                    given in the book ,,AND THIS BOOK IS FAR BETTER THAN DS and ALGO made 
+                    easy by carrier monk publiser (WHICH CONFUSE THE BIGNNER TOTALLY ),,JUST
+                     GO FOR Data Structure using C you will be INFINITE HAPPY
+                </p>
+              </li>
+              <li>
+                <p>
+                  This book is very good and helpful for data structure.
+                   The language is simpler and easier to comprehend than most
+                    of the other books in the market.
+
+                </p>
+              </li>
+              <li>
+                <p>
+                  Very Usefull for begineers and explains the concepts with good number of examples.
+                  The explanations are clear and elaborate.
+                  Compares all the Sorting Algorithms well .
+                  Codes written could be understood easliy by just glancing throught the code .
+
+                </p>
+              </li>
+              <li>
+                <p>The best book so far to absorb C data structures systematically and page after the other. It helped me learned in a sequence which I cant forget. Easy language and explanation
+                </p>
+              </li>
+              <li>
+                <p>Good for beginners</p>
+              </li>
+              <li>
+                <p>perfect for school
+                </p>
+              </li>
+              <li>
+                <p>
+                  If you're not familiar with C, this book should be a pass for you. If you've already learned the language and want to move on to a DS book
+with examples in the language you know, this book is quite good.
+
+Pros:
+- encourages rigorous practice
+- has many informative examples
+- material on the mentioned data structures is covered fairly thoroughly
+- you may pick up some calculus and linear algebra if you didn't already know it.
+
+Null:
+- You may have to learn some of the math on your own to understand some of the teachings, since it appears this
+book was written for a specific course wherein the students are supposed to be familiar with the basics of linear algebra
+and limits from calculus.
+- More on the technician's manual side of books than the interesting or awe-inspiring attempts at showing you the beauty in CS.
+
+Cons:
+- The book can be inaccurate in its representation of C, which doesn't really affect how well it teaches data structures
+- The book sometimes forgets to teach the material, instead just explaining what you already know about a graphic depiction.
+Example: on two-way threading in chapter 10: "Node 5 contains a NULL pointer in its LEFT field, so it will be replaced to point to node 2, which is its in-order predecessor. Similarly, the LEFT field of node 8 will contain NULL because it has no in-order predecessor..." (describing a perfectly self-explanatory graphic depiction - assuming you know the concepts that are being referred to. The paragraph goes on and on to minutia, where it could be spending this time covering a topic you were expected to learn by osmosis: the 'in-order predecessor', and how it's a natural system of linking because LNR traversal is such a natural way to move through a tree's data.)
+
+Overall, I can only recommend the book to somebody who knows C well already. C Programming: A Modern Approach 2nd ed is a great way to get familiar with the language before branching out into more CS-heavy books like this. If you're thrown off by a few inaccurate statements and representations of C here and there, this may not be the book for you, but I like it.
+                </p>
+              </li>
+            </ul>
+          
+              <a href="/downloads/book2">
+                <button class="btn1">DOWNLOAD BOOK</button>
+              </a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <form style="background-color: #eee;"  method="POST" action="/create-comment">
+      <h3 style="margin-left:275px;" >Comment Section</h3>
+      <div class="container my-5 py-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-12 col-lg-10 col-xl-8">                 
+            
+              <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+                <div class="d-flex flex-start w-100">
+                  <div class="form-outline w-100">
+  
+                      <input type="text"  class="form-control" name="Txt" id="Txt" rows="4 " placeholder="ADD YOUR COMMENT"
+                      style="background: #fff;" required />
+               
+                    <label class="form-label" for="textAreaExample">Comment</label>
+                  </div>
+                </div>
+                <div class="float-end mt-2 pt-1">
+                  <button type="submit" id="submit" value="post_comment" class="btn btn-primary btn-sm">Post comment</button>
+                </div>
+                {% for i in data %}
+       
+                <div class="d-flex justify-content-center py-3">
+                  <div class="second py-2 px-2"> <span class="text1">{{i.text}}</span>
+                      <div class="d-flex justify-content-between py-1 pt-2">
+                          <div><img src="{{url_for('static',filename='assets/img/unknownuser.svg')}}" width="27"><span class="text2" >{{i.date_commented}}</span></div>
+                          <!-- <div><span class="text3">Upvote?</span><span class="thumbup"><i class="fa fa-thumbs-o-up"></i></span><span class="text4">3</span></div> -->
+                      </div>
+                  </div>
+              </div>
+          {% endfor %}
+              </div>
+           
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!-- Footer-->
+    <footer class="border-top">
+      <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="#!">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <div class="small text-center text-muted fst-italic">
+              Copyright &copy; Your Website 2022
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{{url_for('static',filename='js/scripts.js')}}"></script>
+  </body>
+</html>

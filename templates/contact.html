@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CONTACT</title>
+    <style>
+      body {
+        background-color: rgb(105, 143, 239);
+      }
+      .contact-box {
+        width: 500px;
+        height: 600px;
+        margin-top: 10px;
+        background-color: white;
+        box-shadow: 0 10px 40px 10px rgb(68, 100, 183);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        border-radius: 10px;
+      }
+      form {
+        margin: 20px;
+      }
+      .input-field {
+        width: 400px;
+        height: 40px;
+        margin-top: 5px;
+        padding-left: 20px;
+        padding-right: 10px;
+        border: none;
+        border-bottom: 2px solid black;
+        border-radius: 10px;
+        outline: none;
+      }
+      .textarea-field {
+        height: 100px;
+      }
+      img {
+        height: 200px;
+        width: auto;
+        margin-left: 25%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contact-box">
+      <form action="/email-contact" method="POST">
+        <img
+          src="{{url_for('static',filename='/assets/img/Brown Line Style Logo.svg')}}"
+          alt=""
+        />
+
+        <input
+          type="text"
+          class="input-field"
+          placeholder="NAME"
+          name="NAME"
+          required
+        />
+        <input
+          type="email"
+          class="input-field"
+          placeholder="E-MAIL"
+          name="EMAIL"
+          required
+        />
+        <br />
+        <br />
+        <input
+          type="text"
+          class="input-field"
+          placeholder="Subject"
+          name="SUBJECT"
+          required
+        />
+        <br />
+        <br />
+        <textarea
+          name="MESSAGE"
+          class="input-field textarea-field"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="WRITE A MESSAGE"
+        ></textarea>
+        <br /><br />
+        <input type="submit" />
+      </form>
+    </div>
+  </body>
+</html>

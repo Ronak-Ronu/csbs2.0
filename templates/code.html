@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE-PAGE</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+ <style>
+    body{
+        background-image: url(/static/assets/img/pybg.png);
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-color: transparent;
+    }
+ kbd {
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+    color: #333;
+    display: inline-block;
+    font-size: .85em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+   }
+</style>
+</head>
+<body>
+    <h1>python block</h1>
+    <p><kbd>Shift</kbd> + <kbd>Enter</kbd> : RUN CODE </p>
+    <div class="codespace">
+        <br>
+        <py-repl id="my-repl" auto-generate="true" >print("hello world") </py-repl>
+    </div>
+  
+</body>
+</html>
