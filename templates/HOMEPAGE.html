@@ -16,10 +16,10 @@
       body{
         background-color: rgb(255, 255, 255);
         background-image: url("{{url_for('static',filename='assets/img/classall.png')}}");
+        background-size: cover;
         background-repeat: no-repeat;
-        /* background-size: cover; */
-        max-width: 100%;
-        max-height: 100%;
+        background-attachment: fixed;
+       background-position: center;
       }
       /* .head {
         /* width: 100vw; */
@@ -71,6 +71,9 @@
         margin-top: 23px;
         font-weight: bold;
         
+      }
+      @media (max-width:700px){
+
       }
       .button-51 {
         background-color: transparent;
@@ -124,11 +127,12 @@
         background-color: #6dcff6;
       }
 
-      @media (min-width: 100px) {
+      @media (min-width: 600px) {
         .button-51 {
           padding: 4px 20px;
         }
       }
+     
       .welcome {
         display: flex;
         margin-left: 50%;
@@ -142,6 +146,37 @@
       .welcome p {
         margin-top: 223px;
         margin-left: -312px;
+      }
+      @media (max-width:600px){
+          body{
+            background-image: url("{{url_for('static',filename='assets/img/wallpaper.png')}}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: right;
+            width: 100vw;
+          }
+          .button-51 {
+          padding: 7px 20px;
+          font-size: 20px;
+          top: 30px;
+        }
+        .logo h1{
+          line-height: 79px;
+        }
+          .welcome
+          {
+            margin-top: 300px;
+            font-size: 46px;
+          }
+          .welcome p{
+            margin-top: 310px;
+            font-size: 57px;
+          }
+          nav{
+            padding: 50px 10px;
+            
+          }
       }
     
     </style>
@@ -173,7 +208,7 @@
       </nav>
       <div class="welcome">
         <h1>
-          HELLO <span><h2>BUDDEES</h2></span>
+          HELLO <span><h2>BUDDIES</h2></span>
         </h1>
         <br />
         <p>THIS IS FOR YOU</p>
