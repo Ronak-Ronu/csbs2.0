@@ -98,7 +98,8 @@
         margin-bottom: 3rem;
     padding-top: calc(8rem + 57px);
       padding-bottom: 8rem;
-       background: no-repeat center center;
+      width: 100%;
+       background: no-repeat center ;
         background-color: #6c757d;
         margin-top: 0;
   margin-bottom: 0.6rem;
@@ -108,11 +109,18 @@
         color: white;
         font-size: 30px;
       }
-    @media (max-width:500px){
-      header .headwelcome{
-        width: 100vw;
+      @media (max-width:500px){
+        .headwelcome{
+          width: 150%;
+          font-size: 12px;
+        }
+        .headwelcome .site-heading h1{
+          font-size: 25px;
+        }
+        .post-preview{
+          margin-left: 100px;
+        }
       }
-    }
     </style>
   </head>
 
@@ -186,7 +194,7 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
           <div class="col-md-10 col-lg-8 col-xl-7">
             <div class="site-heading">
-              <h1 style="font-size: 70px;">WELCOME BLOG</h1>
+              <h1>WELCOME BLOG</h1>
               <span class="subheading">GET KNOWLEDGEABLE BLOG</span>
             </div>
           </div>
