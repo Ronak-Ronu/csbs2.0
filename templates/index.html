@@ -43,7 +43,7 @@
       }
       .navbar {
         width: 4rem;
-        height: 100vh;
+        height: 100%;
         position: fixed;
         background-color: #000000a3;
 
@@ -108,7 +108,11 @@
         color: white;
         font-size: 30px;
       }
-    
+    @media (max-width:500px){
+      header .headwelcome{
+        width: 100vw;
+      }
+    }
     </style>
   </head>
 
