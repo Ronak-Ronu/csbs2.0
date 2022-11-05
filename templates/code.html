@@ -30,15 +30,167 @@
     padding: 2px 4px;
     white-space: nowrap;
    }
+    .learnrepl{
+            color: blue;
+            cursor: pointer;
+            text-decoration: none;
+            font-style:italic;
+         
+    }
+    .wb-title {
+    font-family: Arial,sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.wb-min {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAyIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNOCAwaDdhMSAxIDAgMCAxIDAgMkgxYTEgMSAwIDAgMSAwLTJoN3oiLz48L3N2Zz4=);
+    background-size: 33px auto;
+    background-position: center calc(50% + 6px);
+    display: none;
+}
+.wb-full {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjIuNSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNOCAzSDVhMiAyIDAgMCAwLTIgMnYzbTE4IDBWNWEyIDIgMCAwIDAtMi0yaC0zbTAgMThoM2EyIDIgMCAwIDAgMi0ydi0zTTMgMTZ2M2EyIDIgMCAwIDAgMiAyaDMiLz48L3N2Zz4=);
+    background-size: 16px auto;
+    display: none;
+}
+.hidden{
+    display: none;
+}
+
+
 </style>
+    
 </head>
 <body>
     <h1>python block</h1>
     <p><kbd>Shift</kbd> + <kbd>Enter</kbd> : RUN CODE </p>
+    <hr>
+    <span class="learnrepl">
+        py-script.doc 
+    </span>
+    <span> # used in this webpage</span>
+    <hr>
+    <div class="hidden">
+
+        <div class="content">
+            
+            <h4>
+                <p>YOU CAN REFER</p>
+                <a href="https://docs.pyscript.net/latest/concepts/what-is-pyscript.html#example">Py-Script original documentation</a>
+                <p>INSTALLATION  <a href="https://pyscript.net/">INSTALL IT</a></p>
+            </h4>
+            <hr>
+            
+            <p>If you're new to programming and know nothing about HTML or just want to try some of PyScript features, we recommend using the REPL element in the PyScript REPL example instead so you can have a programming experience in a REPL that doesn't require any setup. This REPL can be used to have an interactive experience using Python directly.</p>
+            <hr>
+            Alternatively, you can also use an online editor like W3School's <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default_default">TryIt Editor</a>   and just plug the code below into it, as shown in the example page and click the run button.
+            <hr>
+            <h4>Your first PyScript HTML file</h4>
+            <div class="code1" style="margin-left:20px ;">
+                &lthtml&gt <br>
+                &ensp;  &lthead&gt <br>
+                &emsp;  &ltlink rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /&gt <br>
+                &emsp;  &ltscript defer src="https://pyscript.net/latest/pyscript.js"&gt &lt/script&gt <br>
+                &ensp;  &lt/head&gt <br>
+                &ensp;  &ltbody> &ltpy-script> print('Hello, World!') &lt/py-script&gt &lt/body&gt <br>
+                &lt/html&gt <br>
+            </div>
+            <p>Notice the use of the <py-script> tag in the HTML body. This is where you'll write your Python code</p>
+            <hr>
+            <h4>The py-script tag</h4>
+            <p>The &ltpy-script&gt tag lets you execute multi-line Python scripts and print back onto the page. For example, we can compute π.
+            </p>
+            <div class="code2" style="margin-left:20px ;">
+                &lthtml&gt <br>
+               &ensp; &lthead&gt <br>
+  &emsp;  &ltlink rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /&gt  <br>
+  &emsp; &ltscript defer src="https://pyscript.net/latest/pyscript.js">&lt/script&gt <br>
+  &ensp; &lt/head&gt <br>
+  &ensp; &ltbody& <br>
+    &emsp;  &ltpy-script&gt <br>
+    &emsp;   print("Let's compute π:") <br>
+    &emsp;   def compute_pi(n): <br>
+    &emsp;       pi = 2 <br>
+    &emsp;       for i in range(1,n): <br>
+    &emsp;           pi *= 4 * i ** 2 / (4 * i ** 2 - 1) <br>
+                &emsp;       return pi <br>
+
+                &emsp;   pi = compute_pi(100000) <br>
+                &emsp;   s = f"π is approximately {pi:.3f}" <br>
+                &emsp;   print(s) <br>
+                &emsp;  &lt/py-script&gt <br>
+ &ensp; &lt/body&gt <br>
+ &ensp;&lt/html&gt <br>
+
+            </div>
+            <hr>
+            <h4>Another example of &ltpy-script&gt :</h4>
+            <p>We can use python module in py-script</p>
+            <p>so in my example im using datetime module which is inbuild in python and so we no need to install it ,</p>
+            <p>Fact : i used this datetime python module in my ubuntu gui project use can visit the site in this website as well </p>
+            <p>CODE :</p>
+            <div class="code3" style="margin-left:20px ;">
+               
+                &lthtml &gt <br>
+                &ensp;   &lthead &gt <br>                
+                &emsp;     &lttitle>REPL&lt/title &gt <br>
+                &emsp; &ltlink rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" / &gt <br>
+                &emsp;&ltscript defer src="https://pyscript.net/latest/pyscript.js">&lt/script &gt<br>
+                &ensp;&lt/head &gt<br>
+                
+                &ensp;   &ltbody &gt<br>
+                &emsp; Hello world! &ltbr &gt<br>
+                &emsp;This is the current date and time, as computed by Python:<br>
+                &emsp;&ltpy-script &gt<br>
+                from datetime import datetime<br>
+                now = datetime.now()<br>
+                now.strftime("%m/%d/%Y, %H:%M:%S")<br>
+                &emsp;    &lt/py-script &gt<br>
+                &ensp;&lt/body &gt<br>
+                &lt/html &gt<br>
+
+        </div>
+        <hr>
+        <h4>The py-repl tag</h4>
+        <p>The &ltpy-repl&gt tag creates a REPL component that is rendered to the page as a code editor, allowing you to write executable code inline.</p>
+        <div class="code4" style="margin-left:20px ;">
+            &lthtml&gt <br>
+              &ensp;  &lthead&gt<br>
+              &emsp;&ltlink rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /&gt<br>
+              &emsp;&ltscript defer src="https://pyscript.net/latest/pyscript.js"&gt&lt/script&gt<br>
+              &ensp; &lt/head&gt<br>
+              &ensp;&ltpy-repl>&lt/py-repl&gt<br>
+              &lt/html&gt<br>
+        </div>
+        <hr>
+        <h5>REFERENCE : <a href="https://github.com/pyscript/pyscript/blob/main/docs/tutorials/getting-started.md#your-first-pyscript-html-file">CLICK ME</a> </h5>
+       <hr>
+        <h3>&emsp;&emsp;&emsp;&emsp;&emsp;HAPPY LEARNING...</h3>
+        </div>
+    </div>
     <div class="codespace">
         <br>
         <py-repl id="my-repl" auto-generate="true" >print("hello world") </py-repl>
     </div>
-  
+    <script src="{{ url_for('static', filename='js/winbox.bundle.js') }}"></script>
+  <!-- <script src="../static/js/winbox.bundle.js"></script> -->
+  <script>
+    const learn=document.querySelector(".learnrepl")
+    const content=document.querySelector(".content")
+    learn.addEventListener('click',()=> {
+        const wind = new WinBox({
+            title:'learn <py-repl>',
+            background:'black',
+            left:50,
+            top:50,
+            width:'100px',
+            height:'160px',
+            mount: content,
+        })
+    })
+  </script>
 </body>
 </html>
