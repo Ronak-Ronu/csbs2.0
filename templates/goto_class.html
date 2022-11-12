@@ -134,28 +134,8 @@
         </div>
         
       </div>
-      <div class="card" style="width: 20rem; margin-left: 50px;">
-        <img class="card-img-top" src="{{url_for('static',filename='assets/img/donald.jpg')}}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">DONAL_JOSEPH</h5>
-          <p class="card-text">Share about you to email by clicking on below section of hey,add me too.your thought will added in this section. </p>
-          <a  href="https://www.instagram.com/donal.joseph.7/" class="btn btn-primary">KNOW MORE</a>
-          <a href="https://www.instagram.com/donal.joseph.7/">
-            <img src=" {{ url_for('static', filename='assets/img/insta.png') }} " alt=""> 
-          </a>
-        </div>
-      </div>
-      <div class="card" style="width: 20rem; margin-left: 50px;">
-        <img class="card-img-top" src="{{url_for('static',filename='assets/img/manoj.jpg')}}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">MANOJ</h5>
-          <p class="card-text">Share about you to email by clicking on below section of hey,add me too.your thought will added in this section.</p>
-          <a  href="https://www.instagram.com/manoj9138manoj/" class="btn btn-primary">KNOW MORE</a>
-          <a href="https://www.instagram.com/manoj9138manoj/">
-            <img src=" {{ url_for('static', filename='assets/img/insta.png') }} " alt=""> 
-          </a>
-        </div>
-      </div>
+     
+      
       <div class="card" style="width: 20rem; margin-left: 50px;">
         <img class="card-img-top" src="{{url_for('static',filename='assets/img/saran.jpg')}}" alt="Card image cap">
         <div class="card-body">
@@ -182,7 +162,7 @@
         <img class="card-img-top" src="{{url_for('static',filename='assets/img/gowtham.jpg')}}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">GOWTHAM_RAMASAMY</h5>
-          <p class="card-text">meditation boy &#x1F9D8;&#x200D;&#x2642;&#xFE0F;<br>Gym boy &#x1F3CB;&#xFE0F;&#x200D;&#x2642;&#xFE0F; Cool boy <br> Talkactive 
+          <p class="card-text">meditation boy &#x1F9D8;&#x200D;&#x2642;&#xFE0F;<br>Gym boy &#x1F3CB;&#xFE0F;&#x200D;&#x2642;&#xFE0F; Cool boy <br> 
             Share about you to email by clicking on below section of hey,add me too.your thought will added in this section.</p>
           <a  href="https://www.instagram.com/gowtham__ramasamy_/" class="btn btn-primary">KNOW MORE</a>
           <a href="https://www.instagram.com/gowtham__ramasamy_/">
@@ -190,7 +170,23 @@
           </a>
         </div>
       </div>
-      
+      {% for i in userdata %}
+      {% if i.name!='ronu' %}
+        
+      <div class="card" style="width: 20rem; margin-left: 50px;">
+        <img class="card-img-top" src="{{url_for('static',filename='assets/img/unknownuser.svg')}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <p class="card-text">meditation boy &#x1F9D8;&#x200D;&#x2642;&#xFE0F;<br>BORN ON :{{i.birthday}} &#x1F3CB;&#xFE0F;&#x200D;&#x2642;&#xFE0F;  <br>  
+            Share about you to email by clicking on below section of hey,add me too.your thought will added in this section.</p>
+          <a  href="https://www.instagram.com/{{i.name}}/" class="btn btn-primary">KNOW MORE</a>
+          <a href="https://www.instagram.com/{{i.name}}/">
+            <img src=" {{ url_for('static', filename='assets/img/insta.png') }} " alt=""> 
+          </a>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
     </div>
 <br>
 <br>

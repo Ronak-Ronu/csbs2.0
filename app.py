@@ -61,6 +61,7 @@ def showdata():
 		uname=request.form['username']
 		upass=request.form['upassword']
 		dob=request.form['bday']
+		# file=request.files['file']
 		User=user(name=uname,birthday=dob,pswd=upass)
 		db.session.add(User)
 		db.session.commit()
@@ -69,6 +70,12 @@ def showdata():
 	if(uname=='ronu' and upass=="1234"):
 		return render_template('table.html',userdata=userdata)
 	return render_template('requested.html')
+
+@app.route('/adduser')
+def adduser():
+		userdata=user.query.all()
+		return render_template('goto_class.html',userdata=userdata)
+
 @app.route('/create-comment',methods=['POST','GET'])
 def create_comment():
 	text=request.form.get('Txt')
@@ -92,7 +99,11 @@ def post2():
 	return render_template('post2.html')
 @app.route('/post3')
 def post3():
-	return render_template('post3.html') 
+	return render_template('post3.html')
+@app.route('/physics')
+def pyhsics():
+	return render_template('matter.html')
+ 
 @app.route('/downloads/book1')
 def tos():
     # workingdir = os.path.abspath(os.getcwd())
@@ -104,12 +115,12 @@ def tos1():
     filepath = 'static/files/book2.pdf'
     return send_file(filepath, as_attachment=True)
 
-@app.route('/delete/<int:sno>')
-def delete(sno):
-	deld = user.query.filter_by(sno=sno).first()
-	db.session.delete(deld)
-	db.session.commit()
-	return "<h4>Data Deleted</h4>"
+# @app.route('/delete/<int:sno>')
+# def delete(sno):
+# 	deld = user.query.filter_by(sno=sno).first()
+# 	db.session.delete(deld)
+# 	db.session.commit()
+# 	return "<h4>Data Deleted</h4>"
 
 
 @app.route('/email-contact',methods=['POST','GET'])
@@ -126,6 +137,7 @@ def emailcnt():
 		return redirect('/blog')
 	return render_template('contact.html')
 
+
 @app.route('/Files')
 def file():
 	return render_template('files.html')
@@ -137,4 +149,4 @@ def error_404(e):
 	return render_template('404.html'),404
 
 if __name__=='__main__':
-	app.run(debug=True,host='0.0.0.0')
+	app.run(debug=True,host='0.0.0.0',port='8000')
