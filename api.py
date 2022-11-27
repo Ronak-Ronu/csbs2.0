@@ -8,4 +8,3 @@ def get_quote():
 	output += quote['content'] + '\n'+f"\t-{quote['author']}"
 
 	return output
-print(get_quote())
