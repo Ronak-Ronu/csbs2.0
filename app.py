@@ -58,8 +58,8 @@ def BLOG():
 	output = ''
 	r = requests.get(url)
 	quote = r.json()
-	output += quote['content'] + '\n'+f"\t-{quote['author']}"
-	return render_template('index.html',data=output)
+	return render_template('index.html',quote=quote)
+
 
 @app.route('/data',methods=['POST','GET'])
 def showdata():
