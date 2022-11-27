@@ -1,5 +1,4 @@
 from curses import flash
-import requests
 from datetime import datetime
 from flask import Flask,render_template,request,redirect,url_for,send_file
 from flask_sqlalchemy import SQLAlchemy
@@ -54,10 +53,7 @@ def rate():
 
 @app.route('/blog')
 def BLOG():
-	url = 'https://api.quotable.io/random'
-	r = requests.get(url)
-	quote = r.json()
-	return render_template('index.html',quote=quote)
+	return render_template('index.html')
 
 
 @app.route('/data',methods=['POST','GET'])
