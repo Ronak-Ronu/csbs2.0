@@ -4,7 +4,6 @@ from flask import Flask,render_template,request,redirect,url_for,send_file
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail,Message
 from config import mail_username,mail_password
-import api
 app=Flask(__name__)
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT']=465
@@ -91,8 +90,7 @@ def create_comment():
 
 @app.route('/post')
 def post():
-	quote=api.get_quote()
-	return render_template('post.html',quote=quote)
+	return render_template('post.html')
 @app.route('/post1')
 def post1():
 	return render_template('post1.html')
