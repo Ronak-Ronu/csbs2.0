@@ -1,10 +1,10 @@
 from curses import flash
+import requests
 from datetime import datetime
 from flask import Flask,render_template,request,redirect,url_for,send_file
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail,Message
 from config import mail_username,mail_password
-import requests
 app=Flask(__name__)
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT']=465
@@ -55,7 +55,6 @@ def rate():
 @app.route('/blog')
 def BLOG():
 	url = 'https://api.quotable.io/random'
-	output = ''
 	r = requests.get(url)
 	quote = r.json()
 	return render_template('index.html',quote=quote)
