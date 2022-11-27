@@ -92,7 +92,7 @@ def create_comment():
 @app.route('/post')
 def post():
 	quote=api.get_quote()
-	return render_template('post.html',data=quote)
+	return render_template('post.html',quote=quote)
 @app.route('/post1')
 def post1():
 	return render_template('post1.html')
@@ -116,13 +116,6 @@ def tos1():
     # workingdir = os.path.abspath(os.getcwd())
     filepath = 'static/files/book2.pdf'
     return send_file(filepath, as_attachment=True)
-
-# @app.route('/delete/<int:sno>')
-# def delete(sno):
-# 	deld = user.query.filter_by(sno=sno).first()
-# 	db.session.delete(deld)
-# 	db.session.commit()
-# 	return "<h4>Data Deleted</h4>"
 
 
 @app.route('/email-contact',methods=['POST','GET'])
