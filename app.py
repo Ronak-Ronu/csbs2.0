@@ -100,11 +100,7 @@ def post2():
 	return render_template('post2.html')
 @app.route('/post3')
 def post3():
-	return render_template('post3.html')
-@app.route('/physics')
-def pyhsics():
-	return render_template('matter.html')
- 
+	return render_template('post3.html') 
 @app.route('/downloads/book1')
 def tos():
     # workingdir = os.path.abspath(os.getcwd())
