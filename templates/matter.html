@@ -11,7 +11,6 @@
 }
 canvas {
   width: 900px;
-
 }
 
 
@@ -21,7 +20,6 @@ body {
 
   margin-top: 20%;
   margin-left: 40%;
-  overflow: hidden;
   transform: translate(-50%,-50%);
 }
     </style>
@@ -47,7 +45,7 @@ var render = Render.create({
     engine: engine,
     options : {
         width: 900,
-        height: 9000,
+        height:7000,
         wireframes: false,
         background: COLOR.WINDOW
 
@@ -56,7 +54,7 @@ var render = Render.create({
 });
 
 
-var ground = Bodies.rectangle(300, 4980, 610, 30,{ isStatic: true});
+var ground = Bodies.rectangle(400, 5000, 610, 30,{ isStatic: true});
 var mouse=Matter.Mouse.create(render.canvas);
 var mouseCoonstraint=Matter.MouseConstraint.create(engine,{
     mouse: mouse,
@@ -86,13 +84,10 @@ let stack1=Matter.Composites.stack(270,210,3,4,3,0,function(x,y){
 })
 Composite.add(engine.world, [stack,stack1,ball,sling,ground,mouseCoonstraint]);
 
-// run the renderer
 Render.run(render);
 
-// create runner
 var runner = Runner.create();
 
-// run the engine
 Runner.run(runner, engine);
 
     </script>

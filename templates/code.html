@@ -7,15 +7,17 @@
     <title>CODE-PAGE</title>
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
  <style>
     body{
         background-image: url(/static/assets/img/pybg.png);
         background-size: cover;
         width: 100vw;
         height: 100vh;
-        overflow: hidden;
         background-color: transparent;
+    }
+    .ͼ4 .cm-line {
+        font-size: 18px;
     }
  kbd {
     background-color: #eee;
@@ -173,6 +175,11 @@
     </div>
     <div class="codespace">
         <br>
+        <py-env>
+            - numpy 
+            - matplotlib
+            - pandas
+          </py-env> 
         <py-repl id="my-repl" auto-generate="true" >print("hello world") </py-repl>
     </div>
     <script src="{{ url_for('static', filename='js/winbox.bundle.js') }}"></script>
