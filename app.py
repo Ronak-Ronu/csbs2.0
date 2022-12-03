@@ -139,4 +139,4 @@ def error_404(e):
 	return render_template('404.html'),404
 
 if __name__=='__main__':
-	app.run(debug=True,host='0.0.0.0',port='8000')
+	app.run(debug=True,port='8000')
