@@ -1,4 +1,3 @@
-from curses import flash
 from datetime import datetime
 from flask import Flask,render_template,request,redirect,url_for,send_file
 from flask_sqlalchemy import SQLAlchemy
@@ -40,8 +39,6 @@ def go_class():
 	userdata=user.query.all()
 	return render_template('goto_class.html',userdata=userdata)
 
-
-
 @app.route('/addme')
 def ADDME():
 	return render_template('add_me.html')
@@ -66,7 +63,7 @@ def showdata():
 		User=user(name=uname,birthday=dob,pswd=upass)
 		db.session.add(User)
 		db.session.commit()
-	#data = request.form.get('add_me.html')
+	# data = request.form.get('add_me.html')
 	userdata=user.query.all()
 	if(uname=='ronu' and upass=="1234"):
 		return render_template('table.html',userdata=userdata)
