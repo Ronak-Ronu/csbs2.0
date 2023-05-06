@@ -1,0 +1,3 @@
+[build]
+  command = "pip install -r requirements.txt && gunicorn app.py:app"
+  publish = "/venv/static"
