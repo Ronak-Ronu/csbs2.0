@@ -3,6 +3,8 @@ from flask import Flask,render_template,request,redirect,url_for,send_file
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail,Message
 from config import mail_username,mail_password
+from flask_frozen import Freezer
+
 
 app=Flask(__name__)
 
@@ -137,4 +139,4 @@ def error_404(e):
 	return render_template('404.html'),404
 
 if __name__=='__main__':
-	app.run(debug=True,port='8000')
+	freezer.freeze()
