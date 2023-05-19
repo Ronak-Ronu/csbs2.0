@@ -1,0 +1,4 @@
+[build]
+command = "gunicorn app:app"
+[build.environment]
+PORT = 8000
