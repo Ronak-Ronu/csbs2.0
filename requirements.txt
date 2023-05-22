@@ -2,6 +2,7 @@ Flask==2.2.2
 Flask-Email==1.4.4
 Flask-Login==0.6.2
 Flask-Mail==0.9.1
+aiohttp
 Flask-SQLAlchemy==2.5.1
 fonttools==4.38.0
 Frozen-Flask==0.18
