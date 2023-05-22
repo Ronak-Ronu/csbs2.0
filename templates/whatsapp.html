@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELPCODE404</title>
+    <style>
+      .card {
+  margin-top: 10%;
+  margin-left: 15%;
+  width: 354px;
+    height: 402px;
+  background: rgba(217, 217, 217, 0.58);
+  border: 1px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-weight: bolder;
+  color: black;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 20px;
+}
+.card:hover {
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+
+.card:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+@media screen and (max-width: 600px) {
+    .card-grid{
+      display: grid;
+  grid-template-columns: auto;
+  grid-gap: 10px;
+}
+  }
+    </style>
+</head>
+<body>
+    <h3>NEED HELPCODE404?</h3>
+    <p>CHECK YOUR WHATSAPP TO GET STARTED LEARNING</p>
+        <div class="card-grid">
+            {% for i in resource %}
+            <div class="card">
+                  <img src="{{ i.thumbnail }}" width="96%" height="200"/>
+                  <p ><b> BOOK NO.:</b> {{ i.id }}</p>
+                  <p ><b>Author:</b> {{ i.author}}</p>
+                  <p ><b>Course:</b> {{ i.topic }}</p>
+                  <p ><b>Rating:</b> {{ i.Rating }}</p>
+                  <p>
+                    <form  action="/whatsappform" method="post">
+                      <input type="text" name="phoneno" placeholder="PhoneNumber">
+                      <input type="hidden" name="id" value="{{i.id}}"/>
+                      <input type="submit" value="WHATSAPP ME"/>
+                    </form>
+                </div>
+                  {% endfor %}
+                </div>
+</body>
+</html>

@@ -1,10 +1,14 @@
-from datetime import datetime
 from flask import Flask,render_template,request,redirect,url_for,send_file
 from flask_sqlalchemy import SQLAlchemy
+import flask
 from flask_mail import Mail,Message
 from config import mail_username,mail_password
+from datetime import datetime
+from whatsappmsg import get_text_message_input, send_message,get_templated_message_input
+import json
+import asyncio
+from waresources import resources
 # from flask_frozen import Freezer
-
 
 app=Flask(__name__)
 
@@ -32,6 +36,10 @@ class Comment(db.Model):
 	id=db.Column(db.Integer,primary_key=True)
 	text=db.Column(db.String(200),nullable=False)
 	date_commented=db.Column(db.DateTime(timezone=True),default=datetime.utcnow)
+
+with open('config.json') as f:
+    config = json.load(f)
+app.config.update(config)
 
 @app.route('/')
 def home():
@@ -138,7 +146,23 @@ def code():
 def error_404(e):
 	return render_template('404.html'),404
 
+@app.route('/helpcode404')
+def helpcode404():
+	return render_template('whatsapp.html',resource=resources())
+
+@app.route('/whatsappform', methods=['POST'])
+async def welcome():
+   id = int(request.form.get("id"))
+   phno=int(request.form.get("phoneno"))
+   res=resources()
+   cres= next(filter(lambda f: f['id'] == id, res), None)
+   data1 = get_text_message_input(app.config['RECIPIENT_WAID'], 
+   f'```Congratulation for getting started.this is``` *helpcode404*.\n_VISIT_ \n https://github.com/Ronak-Ronu?tab=repositories \n *OPEN* {cres["document"]}.\n*Topic* : {cres["topic"]} \n*Rating*:{cres["Rating"]} \n *SendTo*:{phno}');
+   data2 = get_templated_message_input(app.config['RECIPIENT_WAID'], cres)
+   print(cres)
+   await send_message(data1)
+   return flask.redirect(flask.url_for('BLOG'))
+
 if __name__=='__main__':
 	# freezer.freeze()
 	app.run(debug=True)
-
