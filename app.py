@@ -153,7 +153,7 @@ def helpcode404():
 @app.route('/whatsappform', methods=['POST'])
 async def welcome():
    id = int(request.form.get("id"))
-   phno=int(request.form.get("phoneno"))
+   phno=request.form.get("phoneno")
    res=resources()
    cres= next(filter(lambda f: f['id'] == id, res), None)
    data1 = get_text_message_input(app.config['RECIPIENT_WAID'], 
