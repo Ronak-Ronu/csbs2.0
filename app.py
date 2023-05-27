@@ -159,7 +159,7 @@ async def welcome():
    data1 = get_text_message_input(app.config['RECIPIENT_WAID'], 
    f'```Congratulation for getting started.this is``` *helpcode404*.\n_VISIT_ \n https://github.com/Ronak-Ronu?tab=repositories \n *OPEN* {cres["document"]}.\n*Topic* : {cres["topic"]} \n*Rating*:{cres["Rating"]} \n *SendTo*:{phno}');
    data2 = get_templated_message_input(app.config['RECIPIENT_WAID'], cres)
-   print(cres)
+   print(data1)
    await send_message(data1)
    return flask.redirect(flask.url_for('BLOG'))
 
