@@ -156,7 +156,7 @@ async def welcome():
    phno=request.form.get("phoneno")
    res=resources()
    cres= next(filter(lambda f: f['id'] == id, res), None)
-   data1 = get_text_message_input(app.config['RECIPIENT_WAID'], 
+   data1 = get_text_message_input(app.config['RECIPIENT_WAID'],
    f'```Congratulation for getting started.this is``` *helpcode404*.\n_VISIT_ \n https://github.com/Ronak-Ronu?tab=repositories \n *OPEN* {cres["document"]}.\n*Topic* : {cres["topic"]} \n*Rating*:{cres["Rating"]} \n *SendTo*:{phno}');
    data2 = get_templated_message_input(app.config['RECIPIENT_WAID'], cres)
    print(data1)
