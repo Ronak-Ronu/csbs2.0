@@ -22,8 +22,21 @@ async def send_message(data):
     except aiohttp.ClientConnectorError as e:
       print('Connection Error', str(e))
 
-def get_text_message_input(recipient, text):
-  return json.dumps({
+def get_image_message_input(recipient,image):
+  return json.dumps(
+    {
+  "messaging_product": "whatsapp",
+  "preview_url": False,
+  "recipient_type": "individual",
+  "to": recipient,
+  "type": "image",
+  "image": {
+    "link" : image
+            },
+  })
+def get_text_message_input(recipient,text):
+  return json.dumps(
+  {
     "messaging_product": "whatsapp",
     "preview_url": False,
     "recipient_type": "individual",
@@ -31,50 +44,5 @@ def get_text_message_input(recipient, text):
     "type": "text",
     "text": {
         "body": text
-    },
-
-  })
-
-def get_templated_message_input(recipient, resources):
-  return json.dumps({
-    "messaging_product": "whatsapp",
-    "to": recipient,
-    "type": "template",
-    "template": {
-      "name": "resources",
-      "language": {
-        "code": "en_US"
-      },
-      "components": [
-        {
-          "type": "header",
-          "parameters": [
-            {
-              "type": "document",
-              "document": {
-                "filename": "data structures c programming.pdf",
-                "link": resources['document']
-              }
-            }
-          ]
-        },
-        {
-          "type": "body",
-          "parameters": [
-            {
-              "type": "text",
-              "text": resources['author']
-            },
-            {
-              "type": "text",
-              "text": resources['topic']
-            },
-            {
-              "type": "text",
-              "text": resources['Rating']
-            }
-          ]
-        }
-      ]
-    }
-  })
+           }
+        })

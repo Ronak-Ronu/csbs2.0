@@ -4,7 +4,7 @@ import flask
 from flask_mail import Mail,Message
 from config import mail_username,mail_password
 from datetime import datetime
-from whatsappmsg import get_text_message_input, send_message,get_templated_message_input
+from whatsappmsg import get_text_message_input, send_message,get_image_message_input
 import json
 import asyncio
 from waresources import resources
@@ -157,9 +157,10 @@ async def welcome():
    res=resources()
    cres= next(filter(lambda f: f['id'] == id, res), None)
    data1 = get_text_message_input(app.config['RECIPIENT_WAID'],
-   f'```Congratulation for getting started.this is``` *helpcode404*.\n_VISIT_ \n https://github.com/Ronak-Ronu?tab=repositories \n *OPEN* {cres["document"]}.\n*Topic* : {cres["topic"]} \n*Rating*:{cres["Rating"]} \n *SendTo*:{phno}');
-   data2 = get_templated_message_input(app.config['RECIPIENT_WAID'], cres)
+   f'```Congratulation for getting started.this is``` *helpcode404*.\n*_VISIT_* \n https://github.com/Ronak-Ronu?tab=repositories \n\n *OPEN DOCUMENT* {cres["document"]}.\n*Topic* : {cres["topic"]} \n*Rating*:{cres["Rating"]} \n *SendTo*:{phno}');
+   data2=get_image_message_input(app.config['RECIPIENT_WAID'],cres['thumbnail'])
    print(data1)
+   await send_message(data2)
    await send_message(data1)
    return flask.redirect(flask.url_for('BLOG'))
 
