@@ -6,28 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HELPCODE404</title>
     <style>
-      h2{
-  color: purple;
-  text-align: center;
-  font-weight: bolder;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@500&family=Amatic+SC:wght@700&family=IBM+Plex+Mono:wght@500&family=Open+Sans:ital,wght@1,500&family=Raleway:ital,wght@1,500&family=Roboto+Mono:ital,wght@1,600&display=swap');
+      *{
+        font-family: 'Advent Pro', sans-serif;
+font-family: 'Amatic SC', cursive;
+font-family: 'IBM Plex Mono', monospace;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto Mono', monospace;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+      }
       .card {
   margin-top: 10%;
-  margin-left: 15%;
-  width: 354px;
+  width: 347px;
     height: 410px;
-  background: rgba(217, 217, 217, 0.58);
-  border: 1px solid white;
-  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
-  backdrop-filter: blur(6px);
-  border-radius: 17px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.5s;
-  font-weight: bolder;
-  color: black;
+    font-weight: bolder;
+    color: rgb(38, 35, 38);
+    background: rgba(217, 217, 217, 0.58);
+    border: 1px solid white;
+     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+     backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
 }
-
 .card-grid {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -48,12 +53,32 @@
   grid-gap: 10px;
 }
 
+.card {
+  width: 150vw;
+    height: 400px;
+    margin-right: 10px;
+    font-weight: bolder;
+    color: rgb(38, 35, 38);
+    background: rgba(217, 217, 217, 0.58);
+    border: 1px solid white;
+     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+     backdrop-filter: blur(6px);
+     text-align: center;
+    border-radius: 17px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
   }
     </style>
 </head>
 <body>
-    <h2>NEED HELPCODE404 ?</h2>
-    <h2>Whatsapp To Learn</h2>
+  <div style="width:150%;height:5.5vh;overflow-x:hidden;background-color:rgb(98, 95, 95);">
+    <h2 style="color: rgb(147, 226, 172);
+    text-align: left;margin-left:20px;
+    font-weight: bolder;">NEED HELPCODE404 ? <span style="color: rgb(147, 226, 172);
+    font-weight: bolder;">Whatsapp To Learn</span></h2>
+  </div>
         <div class="card-grid">
             {% for i in resource %}
             <div class="card">
@@ -62,7 +87,6 @@
                   <p ><b>Author:</b> {{ i.author}}</p>
                   <p ><b>Course:</b> {{ i.topic }}</p>
                   <p ><b>Rating:</b> {{ i.Rating }}</p>
-                  <p>
                     <form  action="/whatsappform" method="post">
                       <input type="text" name="phoneno" placeholder="PhoneNumber">
                       <input type="hidden" name="id" value="{{i.id}}"/>
