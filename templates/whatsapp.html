@@ -36,28 +36,29 @@ box-sizing: border-box;
 .card-grid {
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-gap: 20px;
+  grid-gap: 50px;
+  justify-content: center;
 }
 .card:hover {
   border: 1px solid black;
   transform: scale(1.05);
 }
-
+.card img{
+  height: 60%;
+}
 .card:active {
   transform: scale(0.95) rotateZ(1.7deg);
 }
 @media screen and (max-width: 600px) {
     .card-grid{
       display: grid;
-  grid-template-columns: auto;
-  grid-gap: 10px;
+      grid-template-columns: auto;
+  grid-gap: 20px;
+  justify-content: center;
 }
 
 .card {
-  width: 150vw;
-    height: 400px;
-    margin-right: 10px;
-    font-weight: bolder;
+  font-weight: bolder;
     color: rgb(38, 35, 38);
     background: rgba(217, 217, 217, 0.58);
     border: 1px solid white;
