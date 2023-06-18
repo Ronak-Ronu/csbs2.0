@@ -1,6 +1,7 @@
 import aiohttp
 import json
 from flask import current_app
+import requests
 async def send_message(data):
   headers = {
     "Content-type": "application/json",
@@ -18,7 +19,7 @@ async def send_message(data):
           print("Body:", html)
         else:
           print(response.status)        
-          print(response)        
+          print(response)
     except aiohttp.ClientConnectorError as e:
       print('Connection Error', str(e))
 
@@ -46,3 +47,5 @@ def get_text_message_input(recipient,text):
         "body": text
            }
         })
+
+

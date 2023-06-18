@@ -8,10 +8,13 @@ from whatsappmsg import get_text_message_input, send_message,get_image_message_i
 import json
 import asyncio
 from waresources import resources
+from flask_caching import Cache
+import requests
 # from flask_frozen import Freezer
 
+cache = Cache(config={'CACHE_TYPE': 'SimpleCache'})
 app=Flask(__name__)
-
+cache.init_app(app)
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT']=465
 app.config['MAIL_USERNAME']=mail_username
@@ -42,6 +45,7 @@ with open('config.json') as f:
 app.config.update(config)
 
 @app.route('/')
+@cache.cached(timeout=50)
 def home():
 	return render_template('HOMEPAGE.html')
 
@@ -146,6 +150,8 @@ def code():
 def error_404(e):
 	return render_template('404.html'),404
 
+
+
 @app.route('/helpcode404')
 def helpcode404():
 	return render_template('whatsapp.html',resource=resources())
@@ -163,6 +169,7 @@ async def welcome():
    await send_message(data2)
    await send_message(data1)
    return flask.redirect(flask.url_for('BLOG'))
+
 
 if __name__=='__main__':
 	# freezer.freeze()
