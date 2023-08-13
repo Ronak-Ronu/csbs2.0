@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,redirect,url_for,send_file
+from flask import Flask,render_template,request,redirect,url_for,send_file,send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 import flask
 from flask_mail import Mail,Message
@@ -9,7 +9,10 @@ import json
 import asyncio
 from waresources import resources
 from flask_caching import Cache
+import numpy as np
+import matplotlib.pyplot as plt
 import requests
+import time
 # from flask_frozen import Freezer
 
 cache = Cache(config={'CACHE_TYPE': 'SimpleCache'})
@@ -76,8 +79,10 @@ def showdata():
 		dob=request.form['bday']
 		# file=request.files['file']
 		User=user(name=uname,birthday=dob,pswd=upass)
+		
 		db.session.add(User)
 		db.session.commit()
+		
 	# data = request.form.get('add_me.html')
 	userdata=user.query.all()
 	if(uname=='ronu' and upass=="1234"):
@@ -146,10 +151,155 @@ def file():
 @app.route('/code')
 def code():
 	return render_template('code.html')
+
+
+@app.route('/selection_sort',methods=['POST'])
+def selection_sort():
+	num=int(request.form['usernum'])
+	lst = np.random.randint(0,100,num)
+	x=np.arange(0,num,1)
+	# print(num)
+	input_list=lst
+	print(input_list)
+	for idx in range(len(input_list)):
+		min_idx = idx
+		for j in range( idx +1, len(input_list)):
+			plt.bar(x,input_list,color='skyblue',edgecolor='#0077BE')
+			plt.pause(0.001)
+			plt.clf()
+			if input_list[min_idx] > input_list[j]:
+				min_idx = j
+		input_list[idx], input_list[min_idx] = input_list[min_idx], input_list[idx]
+	plt.bar(x, input_list, color='skyblue', edgecolor='#0077BE')
+	plt.savefig('static/assets/img/plot.png')
+	plt.clf() 
+	time.sleep(1)
+	plt.close()
+	return render_template('algovisual.html')
+
+@app.route('/bubble_sort',methods=['POST'])
+def bubble_sort():
+	num=int(request.form['usernum'])
+	lst = np.random.randint(0,100,num)
+	x=np.arange(0,num,1)
+	# print(num)
+	n = len(lst)
+
+	collection=lst
+	print(collection)
+	for i in range(n - 1):
+		swapped = False
+		for j in range(n - 1 - i):
+			plt.bar(x,collection,color='skyblue',edgecolor='#0077BE')
+			plt.pause(0.001)
+			plt.clf()
+			if collection[j] > collection[j + 1]:
+				swapped = True
+				collection[j], collection[j + 1] = collection[j + 1], collection[j]
+		if not swapped:
+			break 
+	plt.bar(x, collection, color='skyblue', edgecolor='#0077BE')
+	plt.savefig('static/assets/img/plot.png')
+	plt.clf() 
+	time.sleep(1)
+	plt.close()
+	return render_template('algovisual.html')
+
+@app.route('/insertion_sort',methods=['POST'])
+def insertion_sort():
+	num=int(request.form['usernum'])
+	lst = np.random.randint(0,100,num)
+	x=np.arange(0,num,1)
+	# print(num)
+	n = len(lst)
+	InputList=lst
+	for i in range(1, len(InputList)):
+		j = i-1
+		nxt_element = InputList[i]
+		while (InputList[j] > nxt_element) and (j >= 0):
+			plt.bar(x,InputList,color='skyblue',edgecolor='#0077BE')
+			plt.pause(0.001)
+			plt.clf()
+			InputList[j+1] = InputList[j]
+			j=j-1
+		InputList[j+1] = nxt_element
+	plt.bar(x, InputList, color='skyblue', edgecolor='#0077BE')
+	plt.savefig('static/assets/img/plot.png')
+	plt.clf() 
+	time.sleep(1)
+	plt.close()
+	return render_template('algovisual.html')
+
+def partition(arr, low, high,x):
+    i = (low-1)
+    pivot = arr[high]
+    for j in range(low, high):
+            plt.bar(x,arr,color='skyblue', edgecolor='#0077BE')
+            plt.pause(0.01)
+            plt.clf()
+            if arr[j] <= pivot:
+                i = i+1
+                arr[i], arr[j] = arr[j], arr[i]
+
+    arr[i+1], arr[high] = arr[high], arr[i+1]
+    return (i+1)
+
+def quickSort(arr, low, high,x):
+	if len(arr) == 1:
+		return arr
+	if low < high:
+		pi = partition(arr, low, high,x)
+		quickSort(arr, low, pi-1,x)
+		quickSort(arr, pi+1, high,x)
+
+
+@app.route('/quick_sort',methods=['POST'])
+def quick_sort():
+	num=int(request.form['usernum'])
+	lst = np.random.randint(0,100,num)
+	x=np.arange(0,num,1)
+	# print(num)
+	n = len(lst)
+	arr=lst
+	low=0
+	high=n-1
+	quickSort(arr, low, high,x)
+	plt.bar(x, arr, color='skyblue', edgecolor='#0077BE')
+	plt.savefig('static/assets/img/plot.png')
+	plt.clf() 
+	time.sleep(1)
+	plt.close()
+	return render_template('algovisual.html')
+
+
+@app.route('/plot')
+def plot():
+    return 	send_from_directory('static/assets/img', 'plot.png')
+
+
+@app.route('/visualize-code',methods=['POST','GET'])
+def visualalgo():
+	if request.method=='POST':
+		num=request.form['usernum']
+		algotype=request.form['algotype']
+		print(num)
+		print(algotype)
+		if(  algotype.lower() =="selection"):
+			requests.post('http://127.0.0.1:5000/selection_sort', data={'usernum': num})
+		elif(algotype.lower()=="bubble"):
+			requests.post('http://127.0.0.1:5000/bubble_sort', data={'usernum': num})
+		elif(algotype.lower()=="insertion"):
+			requests.post('http://127.0.0.1:5000/insertion_sort', data={'usernum': num})
+		elif(algotype.lower()=="quick_sort"):
+			requests.post('http://127.0.0.1:5000/quick_sort', data={'usernum': num})
+	return render_template('algovisual.html')
+
+
+
+
 @app.errorhandler(404)
 def error_404(e):
 	return render_template('404.html'),404
-
 
 
 @app.route('/helpcode404')

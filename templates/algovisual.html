@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algo-visualizer/csbs20</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Source+Code+Pro:wght@500&display=swap');
+         body {
+            font-family: 'Indie Flower', cursive;
+font-family: 'Source Code Pro', monospace;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input, select, button {
+            padding: 10px;
+            margin: 10px;
+        }
+
+    button {
+        padding: 8px 15px;
+        background-color: #5f7994;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    input, select {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 20px;
+    }
+
+    select {
+        width: 150px;
+    }
+
+    button:hover {
+        background-color: #9abce0;
+    }
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-top: 20px;
+        overflow: hidden;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5px 0;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    .download-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .download-link {
+        display: block;
+        width: 150px;
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: none;
+        background-color: #5f7994;
+        color: #fff;
+        padding: 8px 15px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .DisplayItems {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+       
+    }
+    .download-link:hover {
+        background-color: #9abce0;
+    }
+    li:hover {
+        transform: translateY(-3px);
+        background-color: #f0f0f0;
+        cursor: pointer;
+    }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+        }
+        @media (max-width: 768px) {
+        .DisplayItems {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .download-container {
+            margin-top: 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Sorting Algorithms Visualizer</h1>
+    <form action="/visualize-code" method="POST">
+        <label for="usernum">Random Digits Count :</label>
+                <input type="number" name="usernum" id="usernum">
+        <label for="algotype">Choose Algorithm :</label>
+            <select name="algotype" id="algotype">
+                    <option value="Selection">Selection</option>
+                    <option value="insertion">insertion</option>
+                    <option value="bubble">bubble</option>
+                    <option value="quick_sort">quick_sort</option>
+            </select>
+                <button type="submit" id="submit">visulaize</button>
+    </form>
+    <div class="DisplayItems">
+
+        <ul>
+            <li>selection sort</li>
+            <li>insertion sort</li>
+            <li>bubble sort</l>
+            <li>quick sort</li>      
+            </ul> 
+            <img src="{{ url_for('plot') }}" >
+          
+        </div>
+        <div class="download-container">     
+            <a href="{{ url_for('static', filename='assets/img/plot.png') }}" download class="download-link">
+                Download Plot
+            </a>
+        </div>
+</body>
+</html>

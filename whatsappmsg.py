@@ -6,7 +6,7 @@ async def send_message(data):
   headers = {
     "Content-type": "application/json",
     "Authorization": f"Bearer {current_app.config['ACCESS_TOKEN']}",
-    }
+}
   async with aiohttp.ClientSession() as session:
     url = 'https://graph.facebook.com' + f"/{current_app.config['VERSION']}/{current_app.config['PHONE_NUMBER_ID']}/messages"
     try:
@@ -46,6 +46,4 @@ def get_text_message_input(recipient,text):
     "text": {
         "body": text
            }
-        })
-
-
+})
