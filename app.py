@@ -285,13 +285,13 @@ def visualalgo():
 		print(num)
 		print(algotype)
 		if(  algotype.lower() =="selection"):
-			requests.post('https://csbs20.onrender.com/visualize-code/selection_sort', data={'usernum': num})
+			requests.post('https://csbs20.onrender.com/selection_sort', data={'usernum': num})
 		elif(algotype.lower()=="bubble"):
-			requests.post('https://csbs20.onrender.com/visualize-code/bubble_sort', data={'usernum': num})
+			requests.post('https://csbs20.onrender.com/bubble_sort', data={'usernum': num})
 		elif(algotype.lower()=="insertion"):
-			requests.post('https://csbs20.onrender.com/visualize-code/insertion_sort', data={'usernum': num})
+			requests.post('https://csbs20.onrender.com/insertion_sort', data={'usernum': num})
 		elif(algotype.lower()=="quick_sort"):
-			requests.post('https://csbs20.onrender.com/visualize-code/quick_sort', data={'usernum': num})
+			requests.post('https://csbs20.onrender.com/quick_sort', data={'usernum': num})
 	return render_template('algovisual.html')
 
 
