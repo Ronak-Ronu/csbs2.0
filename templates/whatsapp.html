@@ -78,7 +78,7 @@ box-sizing: border-box;
     <h2 style="color: rgb(147, 226, 172);
     text-align: left;margin-left:20px;
     font-weight: bolder;">NEED HELPCODE404 ? <span style="color: rgb(147, 226, 172);
-    font-weight: bolder;">Whatsapp To Learn</span></h2>
+    font-weight: bolder;">Mail To Learn</span></h2>
   </div>
         <div class="card-grid">
             {% for i in resource %}
@@ -88,10 +88,10 @@ box-sizing: border-box;
                   <p ><b>Author:</b> {{ i.author}}</p>
                   <p ><b>Course:</b> {{ i.topic }}</p>
                   <p ><b>Rating:</b> {{ i.Rating }}</p>
-                    <form  action="/whatsappform" method="post">
-                      <input type="text" name="phoneno" placeholder="PhoneNumber">
+                    <form  action="/MailCourse" method="post">
+                      <input type="text" name="email" placeholder="email">
                       <input type="hidden" name="id" value="{{i.id}}"/>
-                      <input type="submit" value="WHATSAPP ME"/>
+                      <input type="submit" value="Mail ME"/>
                     </form>
                 </div>
                   {% endfor %}

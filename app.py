@@ -144,6 +144,49 @@ def emailcnt():
 		return redirect('/blog')
 	return render_template('contact.html')
 
+@app.route('/MailCourse',methods=['POST','GET'])
+def mailcourse():
+	if request.method=='POST':
+		id = int(request.form.get("id"))
+		email=request.form['email']
+		res=resources()
+		cres= next(filter(lambda f: f['id'] == id, res), None)
+		print(email)
+		print(id)
+		body1="""
+            <html>
+            <head>
+                <style>
+                    /* Add your CSS styling here */
+                </style>
+            </head>
+            <body>
+                <p><strong>Congratulations for getting started with helpcode404!</strong></p>
+                <p><em>Visit:</em> <a href="https://github.com/Ronak-Ronu?tab=repositories">GitHub Repositories</a></p>
+                <p><em>Open Document:</em> <a href="{}">{}</a></p>
+				<img src="{}" width="250px" height="300px"/>
+                <p><em>Topic:</em> {}</p>
+                <p><em>Rating:</em> {}</p>
+                <p><em>SendTo:</em> {}</p>
+            </body>
+            </html>
+        """.format(cres["document"], cres["document"],cres["thumbnail"], cres["topic"], cres["Rating"], email)
+		body = (
+            f'```Congratulation for getting started. This is``` *helpcode404*.\n'
+			f'*VISIT*\n {cres["thumbnail"]}\n\n'
+            f'*VISIT*\n https://github.com/Ronak-Ronu?tab=repositories\n\n'
+            f'*OPEN DOCUMENT* {cres["document"]}.\n'
+            f'*Topic* : {cres["topic"]}\n'
+            f'*Rating*:{cres["Rating"]}\n'
+            f'*SendTo*:{email}'
+        )
+		message=Message("CODEhELP404",sender="csbs2project@gmail.com",recipients=[email])
+		message.html = body1
+		print(message)
+		mail.send(message)
+		return redirect('/helpcode404')
+	return render_template('whatsapp.html')
+
 
 @app.route('/Files')
 def file():
@@ -167,11 +210,11 @@ def selection_sort():
 			plt.bar(x,input_list,color='skyblue',edgecolor='#0077BE')
 			plt.pause(0.001)
 			plt.clf()
+			plt.savefig(f'static/assets/img/frame_{j}.png')
 			if input_list[min_idx] > input_list[j]:
 				min_idx = j
 		input_list[idx], input_list[min_idx] = input_list[min_idx], input_list[idx]
 	plt.bar(x, input_list, color='skyblue', edgecolor='#0077BE')
-	plt.savefig('static/assets/img/plot.png')
 	plt.clf() 
 	time.sleep(1)
 	plt.close()
@@ -285,7 +328,7 @@ def visualalgo():
 		print(num)
 		print(algotype)
 		if(  algotype.lower() =="selection"):
-			requests.post('https://csbs20.onrender.com/selection_sort', data={'usernum': num})
+			requests.post('http://127.0.0.1:5000/selection_sort', data={'usernum': num})
 		elif(algotype.lower()=="bubble"):
 			requests.post('https://csbs20.onrender.com/bubble_sort', data={'usernum': num})
 		elif(algotype.lower()=="insertion"):
@@ -319,6 +362,7 @@ async def welcome():
    await send_message(data2)
    await send_message(data1)
    return flask.redirect(flask.url_for('BLOG'))
+
 
 
 if __name__=='__main__':
