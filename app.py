@@ -20,8 +20,10 @@ app.config['MAIL_USERNAME']=mail_username
 app.config['MAIL_PASSWORD']=mail_password
 app.config['MAIL_USE_TLS']=False
 app.config['MAIL_USE_SSL']=True
-app.config['SQLALCHEMY_DATABASE_URI']="sqlite:///userdata.db"
+app.config['SQLALCHEMY_DATABASE_URI']="sqlite:///UserDatabase.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+
+
 db=SQLAlchemy(app)
 
 mail = Mail(app)
@@ -32,12 +34,22 @@ class user(db.Model):
 	name=db.Column(db.String(150),unique=True,nullable=False)
 	birthday=db.Column(db.String(100),nullable=False)
 	time_joined=db.Column(db.DateTime,default=datetime.utcnow)
+	# def __init__(self, pswd, name, birthday):
+	# 	self.pswd = pswd
+	# 	self.name = name
+	# 	self.birthday = birthday
+
 	#def __repr__(self)->str:
 	#	return f"{self.sno} - {self.name} - {self.birthday} - {self.pswd}"
 class Comment(db.Model):
 	id=db.Column(db.Integer,primary_key=True)
 	text=db.Column(db.String(200),nullable=False)
 	date_commented=db.Column(db.DateTime(timezone=True),default=datetime.utcnow)
+
+# db.create_all()
+with app.app_context():
+    db.create_all()
+
 
 with open('config.json') as f:
     config = json.load(f)
@@ -83,7 +95,8 @@ def showdata():
 	userdata=user.query.all()
 	if(uname=='ronu' and upass=="1234"):
 		return render_template('table.html',userdata=userdata)
-	return render_template('requested.html')
+	else:
+		return render_template('requested.html')
 
 @app.route('/adduser')
 def adduser():
