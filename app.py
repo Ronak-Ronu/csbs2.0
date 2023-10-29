@@ -8,16 +8,12 @@ from whatsappmsg import get_text_message_input, send_message,get_image_message_i
 import json
 import asyncio
 from waresources import resources
-from flask_caching import Cache
 import numpy as np
 import matplotlib.pyplot as plt
 import requests
 import time
-# from flask_frozen import Freezer
 
-cache = Cache(config={'CACHE_TYPE': 'SimpleCache'})
 app=Flask(__name__)
-cache.init_app(app)
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT']=465
 app.config['MAIL_USERNAME']=mail_username
@@ -45,10 +41,10 @@ class Comment(db.Model):
 
 with open('config.json') as f:
     config = json.load(f)
+	
 app.config.update(config)
 
 @app.route('/')
-@cache.cached(timeout=50)
 def home():
 	return render_template('HOMEPAGE.html')
 
