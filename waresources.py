@@ -102,6 +102,14 @@ def resources():
     "thumbnail": 'https://goalkicker.com/NodeJSBook/NodeJSGrow.png',
     "topic": "NodeJS Notes",
     "Rating":"⭐⭐⭐⭐⭐"
+  },
+   { 
+    "id": 13,
+    "document": 'https://github.com/Ronak-Ronu/mybooks/raw/main/HelpPlacementProgramsUsingC.pdf',
+    "author":"",
+    "thumbnail": 'https://raw.githubusercontent.com/Ronak-Ronu/mybooks/main/placementprogramusingc.png',
+    "topic": "Help ME IN Placement In C",
+    "Rating":"⭐⭐⭐⭐⭐"
   }     
 
   ]

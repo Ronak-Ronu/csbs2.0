@@ -243,8 +243,8 @@ def bubble_sort():
 			break 
 	plt.bar(x, collection, color='skyblue', edgecolor='#0077BE')
 	plt.savefig('static/assets/img/plot.png')
-	plt.clf() 
 	time.sleep(1)
+	plt.clf() 
 	plt.close()
 	return render_template('algovisual.html')
 
