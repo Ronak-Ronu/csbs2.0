@@ -31,7 +31,7 @@ mail = Mail(app)
 class user(db.Model):
 	sno=db.Column(db.Integer,primary_key=True)
 	pswd=db.Column(db.String(199),nullable=False)
-	name=db.Column(db.String(150),unique=True,nullable=False)
+	name=db.Column(db.String(150),unique=False,nullable=False)
 	birthday=db.Column(db.String(100),nullable=False)
 	time_joined=db.Column(db.DateTime,default=datetime.utcnow)
 	# def __init__(self, pswd, name, birthday):
@@ -87,16 +87,13 @@ def showdata():
 		dob=request.form['bday']
 		# file=request.files['file']
 		User=user(name=uname,birthday=dob,pswd=upass)
-		
 		db.session.add(User)
 		db.session.commit()
-		
 	# data = request.form.get('add_me.html')
-	userdata=user.query.all()
-	if(uname=='ronu' and upass=="1234"):
-		return render_template('table.html',userdata=userdata)
-	else:
-		return render_template('requested.html')
+		userdata=user.query.all()
+		if(uname=='ronu' and upass=="1234"):
+			return render_template('table.html',userdata=userdata)
+	return render_template('requested.html')
 
 @app.route('/adduser')
 def adduser():
