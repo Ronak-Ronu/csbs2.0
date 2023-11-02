@@ -173,7 +173,7 @@
       {% for i in userdata %}
       {% if i.name!='ronu' %}
       <div class="card" style="width: 20rem; margin-left: 50px;">
-        <img class="card-img-top" src="{{url_for('static',filename='assets/img/unknownuser.svg')}}" alt="Card image cap">
+        <img class="card-img-top" src="https://ui-avatars.com/api/?name={{i.name}}&background=random" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{i.name}}</h5>
           <p class="card-text">meditation boy &#x1F9D8;&#x200D;&#x2642;&#xFE0F;<br>BORN ON :{{i.birthday}} &#x1F3CB;&#xFE0F;&#x200D;&#x2642;&#xFE0F;  <br>  
