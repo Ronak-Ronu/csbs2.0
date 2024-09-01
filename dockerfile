@@ -1,24 +1,22 @@
-# Use an official Python runtime as a parent image
-FROM python:3.10.12
+# Use the official Python image from the Docker Hub
+FROM python:3.9-slim
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the requirements.txt file to the working directory
+# Copy the requirements file into the container
 COPY requirements.txt .
 
-# Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Create a virtual environment and install dependencies
+RUN python -m venv /opt/venv \
+    && /opt/venv/bin/pip install --upgrade pip \
+    && /opt/venv/bin/pip install -r requirements.txt
 
-# Copy the current directory contents into the container at /app
+# Copy the rest of the application code into the container
 COPY . .
 
-# Expose the port the app runs on
+# Make port 5000 available to the world outside this container
 EXPOSE 5000
 
-# Define environment variables for Flask
-ENV FLASK_APP=app.py
-ENV FLASK_ENV=production
-
-# Run the application
-CMD ["python3", "app.py"]
+# Activate the virtual environment and define the entry point for the container
+CMD ["/opt/venv/bin/python3", "app.py"]
