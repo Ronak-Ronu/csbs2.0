@@ -5,3 +5,4 @@ venv1/
 /.ignore
 /.dockerignore
 /.env
+/.dockerignore

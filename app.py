@@ -2,7 +2,6 @@ from flask import Flask,render_template,request,redirect,url_for,send_file,send_
 from flask_sqlalchemy import SQLAlchemy
 import flask
 from flask_mail import Mail,Message
-# from config import mail_username,mail_password
 from datetime import datetime
 from whatsappmsg import get_text_message_input, send_message,get_image_message_input
 import json
