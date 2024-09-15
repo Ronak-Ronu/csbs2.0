@@ -7,6 +7,7 @@ from whatsappmsg import get_text_message_input, send_message,get_image_message_i
 import json
 import asyncio
 from waresources import resources
+from flask_cors import CORS
 import numpy as np
 import matplotlib.pyplot as plt
 import requests
@@ -14,8 +15,10 @@ from dotenv import load_dotenv
 import time
 import os
 
+
 app=Flask(__name__)
 
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 load_dotenv()
 
@@ -342,13 +345,13 @@ def visualalgo():
 		print(num)
 		print(algotype)
 		if(  algotype.lower() =="selection"):
-			requests.post('http://127.0.0.1:5000/selection_sort', data={'usernum': num})
+			requests.post('https://csbs20.up.railway.app/selection_sort', data={'usernum': num})
 		elif(algotype.lower()=="bubble"):
-			requests.post('https://csbs20.onrender.com/bubble_sort', data={'usernum': num})
+			requests.post('https://csbs20.up.railway.app/bubble_sort', data={'usernum': num})
 		elif(algotype.lower()=="insertion"):
-			requests.post('https://csbs20.onrender.com/insertion_sort', data={'usernum': num})
+			requests.post('https://csbs20.up.railway.app/insertion_sort', data={'usernum': num})
 		elif(algotype.lower()=="quick_sort"):
-			requests.post('https://csbs20.onrender.com/quick_sort', data={'usernum': num})
+			requests.post('https://csbs20.up.railway.app/quick_sort', data={'usernum': num})
 	return render_template('algovisual.html')
 
 
