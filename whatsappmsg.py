@@ -2,13 +2,25 @@ import aiohttp
 import json
 from flask import current_app
 import requests
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
+APP_ID = os.getenv('APP_ID')
+APP_SECRET = os.getenv('APP_SECRET')
+RECIPIENT_WAID = os.getenv('RECIPIENT_WAID')
+VERSION = os.getenv('VERSION')
+PHONE_NUMBER_ID = os.getenv('PHONE_NUMBER_ID')
+ACCESS_TOKEN = os.getenv('ACCESS_TOKEN')
+
+
 async def send_message(data):
   headers = {
     "Content-type": "application/json",
-    "Authorization": f"Bearer {current_app.config['ACCESS_TOKEN']}",
+    "Authorization": f"Bearer {ACCESS_TOKEN}",
 }
   async with aiohttp.ClientSession() as session:
-    url = 'https://graph.facebook.com' + f"/{current_app.config['VERSION']}/{current_app.config['PHONE_NUMBER_ID']}/messages"
+    url = 'https://graph.facebook.com' + f"/{VERSION}/{PHONE_NUMBER_ID}/messages"
     try:
       async with session.post(url, data=data, headers=headers) as response:
         if response.status == 200:

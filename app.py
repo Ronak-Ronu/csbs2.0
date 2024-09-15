@@ -2,7 +2,7 @@ from flask import Flask,render_template,request,redirect,url_for,send_file,send_
 from flask_sqlalchemy import SQLAlchemy
 import flask
 from flask_mail import Mail,Message
-from config import mail_username,mail_password
+# from config import mail_username,mail_password
 from datetime import datetime
 from whatsappmsg import get_text_message_input, send_message,get_image_message_input
 import json
@@ -11,9 +11,18 @@ from waresources import resources
 import numpy as np
 import matplotlib.pyplot as plt
 import requests
+from dotenv import load_dotenv
 import time
+import os
 
 app=Flask(__name__)
+
+
+load_dotenv()
+
+mail_username = os.getenv('mail_username')
+mail_password = os.getenv('mail_password')
+
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT']=465
 app.config['MAIL_USERNAME']=mail_username
@@ -51,10 +60,10 @@ with app.app_context():
     db.create_all()
 
 
-with open('config.json') as f:
-    config = json.load(f)
+# with open('config.json') as f:
+#     config = json.load(f)
 	
-app.config.update(config)
+# app.config.update(config)
 
 @app.route('/')
 def home():
@@ -145,7 +154,7 @@ def emailcnt():
 		msg=request.form['MESSAGE']
 		print(name)
 		message=Message(sub,sender=email,recipients=[mail_username])
-		message.body = f"MESSAGE : \n \t {msg}\n\n Name : {name}\nEmail : {email} \n\n \t THANK YOU FOR CONNECTING : {name}"
+		message.body = f'MESSAGE : \n \t {msg}\n\n Name : {name}\nEmail : {email} \n\n \t THANK YOU FOR CONNECTING : {name}'
 		mail.send(message)
 		return redirect('/blog')
 	return render_template('contact.html')
