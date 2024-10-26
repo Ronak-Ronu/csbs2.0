@@ -1,5 +1,5 @@
 # Use the official Python image from the Docker Hub
-FROM python:3.9-slim
+FROM python:3.10-slim
 
 # Set environment variables to ensure Python outputs everything to the console and to ensure venv is kept alive in the container
 ENV PYTHONUNBUFFERED=1
@@ -30,3 +30,4 @@ EXPOSE 5000
 
 # Define the entry point for the container
 CMD ["python", "app.py"]
+

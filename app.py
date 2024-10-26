@@ -1,4 +1,5 @@
-from flask import Flask,render_template,request,redirect,url_for,send_file,send_from_directory
+import random
+from flask import Flask, jsonify,render_template,request,redirect,url_for,send_file,send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 import flask
 from flask_mail import Mail,Message
@@ -6,6 +7,7 @@ from datetime import datetime
 from whatsappmsg import get_text_message_input, send_message,get_image_message_input
 import json
 import asyncio
+from datetime import datetime
 from waresources import resources
 from flask_cors import CORS
 import numpy as np
@@ -66,6 +68,11 @@ with app.app_context():
 #     config = json.load(f)
 	
 # app.config.update(config)
+def load_passages():
+	with open('typingwords.txt', 'r') as f:
+		passages = f.readlines()
+		print(passages)
+	return [p.strip() for p in passages if p.strip()]
 
 @app.route('/')
 def home():
@@ -88,6 +95,28 @@ def rate():
 @app.route('/blog')
 def BLOG():
 	return render_template('index.html')
+
+@app.route('/type')
+def type():
+	return render_template('typingpractice.html')
+
+@app.route('/get_passage', methods=['GET'])
+def get_passage():
+    passages = load_passages()
+    return jsonify({'passage': random.choice(passages)})
+
+
+@app.route('/save_result', methods=['POST'])
+def save_result():
+    data = request.get_json()
+    username = data.get('username')
+    wpm = data.get('wpm')
+
+    # Save the result to a file or database
+    with open('results.txt', 'a') as f:
+        f.write(f"{username}: {wpm} WPM\n")
+    
+    return jsonify({'message': 'Result saved successfully'})
 
 
 @app.route('/data',methods=['POST','GET'])
